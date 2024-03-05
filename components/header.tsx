@@ -12,7 +12,7 @@ import {
   Dropdown,
   Button,
 } from "reactstrap";
-import user1 from "../assets/images/users/user1.jpg";
+import user1 from "../assets/images/users/user2.jpg";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -27,9 +27,9 @@ export const Header = () => {
     setIsOpen(!isOpen);
   };
   const showMobilemenu = () => {
-    // if (typeof window !== "undefined") {
-    //   document?.getElementById("sidebarArea")?.classList.toggle("showSidebar");
-    // }
+    if (typeof window !== "undefined") {
+      document?.getElementById("sidebarArea")?.classList.toggle("showSidebar");
+    }
   };
   return (
     <Navbar color="primary" dark expand="md" className="bg-gradient">
@@ -66,20 +66,20 @@ export const Header = () => {
       <Collapse navbar isOpen={isOpen}>
         <Nav className="me-auto" navbar>
           <NavItem>
-            <Link href="/dashboard" className="nav-link">
+            <Link href="/dashboard" className="nav-link" id="header-dashboard">
               Dashboard
             </Link>
           </NavItem>
           <NavItem>
-            <Link href="/about" className="nav-link">
+            <Link href="/about" className="nav-link" id="header-about">
               About
             </Link>
           </NavItem>
           <UncontrolledDropdown inNavbar nav>
-            <DropdownToggle caret nav>
+            <DropdownToggle caret nav id="header-other-menu">
               Other menu
             </DropdownToggle>
-            <DropdownMenu end>
+            <DropdownMenu end id="header-other-menu-options">
               <DropdownItem>Option 1</DropdownItem>
               <DropdownItem>Option 2</DropdownItem>
               <DropdownItem divider />
@@ -88,7 +88,7 @@ export const Header = () => {
           </UncontrolledDropdown>
         </Nav>
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-          <DropdownToggle color="transparent">
+          <DropdownToggle color="transparent" id="header-profile">
             <Image
               src={user1}
               alt="profile"
@@ -96,7 +96,7 @@ export const Header = () => {
               width="30"
             />
           </DropdownToggle>
-          <DropdownMenu>
+          <DropdownMenu id="header-profile-options">
             <DropdownItem header>Info</DropdownItem>
             <DropdownItem>My Account</DropdownItem>
             <DropdownItem>Edit Profile</DropdownItem>

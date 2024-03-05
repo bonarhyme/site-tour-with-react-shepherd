@@ -7,11 +7,13 @@ const navigation = [
     title: "Dashboard",
     href: "/dashboard",
     icon: "bi bi-speedometer2",
+    id: "sidebar-dashboard",
   },
   {
     title: "About",
     href: "/about",
     icon: "bi bi-people",
+    id: "sidebar-about",
   },
 ];
 
@@ -19,9 +21,9 @@ export const Sidebar = () => {
   const location = useRouter();
 
   const showMobilemenu = () => {
-    // if (typeof window !== "undefined") {
-    //   //   document?.getElementById("sidebarArea")?.classList.toggle("showSidebar");
-    // }
+    if (typeof window !== "undefined") {
+      document?.getElementById("sidebarArea")?.classList.toggle("showSidebar");
+    }
   };
 
   return (
@@ -45,7 +47,7 @@ export const Sidebar = () => {
       <div className="pt-4 mt-2">
         <Nav vertical className="sidebarNav">
           {navigation.map((navi, index) => (
-            <NavItem key={index} className="sidenav-bg">
+            <NavItem key={index} className="sidenav-bg" id="">
               <Link
                 href={navi.href}
                 className={
@@ -53,6 +55,7 @@ export const Sidebar = () => {
                     ? "text-primary nav-link py-3"
                     : "nav-link text-secondary py-3"
                 }
+                id={navi.id}
               >
                 <i className={navi.icon}></i>
                 <span className="ms-3 d-inline-block">{navi.title}</span>

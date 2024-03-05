@@ -49,7 +49,7 @@ export const BlogsList = (props: Props) => {
   return (
     <>
       {blogData.map((blg, index) => (
-        <Col sm="6" lg="6" xl="3" key={index}>
+        <Col sm="6" lg="6" xl="3" key={index} className={"blog" + index + 1}>
           <Blog
             image={blg.image}
             title={blg.title}
