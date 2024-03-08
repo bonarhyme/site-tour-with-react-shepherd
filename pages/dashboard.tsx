@@ -24,9 +24,7 @@ const Dashboard = (props: Props) => {
           <ProjectTables />
         </Col>
       </Row>
-      <Row>
-        <BlogsList />
-      </Row>
+      <BlogsList />
     </>
   );
 };

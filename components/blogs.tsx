@@ -5,7 +5,7 @@ import bg2 from "../assets/images/bg/bg2.jpg";
 import bg3 from "../assets/images/bg/bg3.jpg";
 import bg4 from "../assets/images/bg/bg4.jpg";
 
-import { Col } from "reactstrap";
+import { Col, Row } from "reactstrap";
 import { Blog } from "./blog";
 
 const blogData = [
@@ -47,7 +47,7 @@ type Props = {};
 
 export const BlogsList = (props: Props) => {
   return (
-    <>
+    <Row id="blogs">
       {blogData.map((blg, index) => (
         <Col sm="6" lg="6" xl="3" key={index}>
           <Blog
@@ -59,6 +59,6 @@ export const BlogsList = (props: Props) => {
           />
         </Col>
       ))}
-    </>
+    </Row>
   );
 };

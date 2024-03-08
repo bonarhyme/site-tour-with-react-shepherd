@@ -12,7 +12,7 @@ import {
   Dropdown,
   Button,
 } from "reactstrap";
-import user1 from "../assets/images/users/user1.jpg";
+import user1 from "../assets/images/users/user2.jpg";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -32,7 +32,13 @@ export const Header = () => {
     // }
   };
   return (
-    <Navbar color="primary" dark expand="md" className="bg-gradient">
+    <Navbar
+      color="primary"
+      dark
+      expand="md"
+      className="bg-gradient"
+      id="navigation"
+    >
       <div className="d-flex align-items-center">
         <NavbarBrand
           href="/"
@@ -66,17 +72,17 @@ export const Header = () => {
       <Collapse navbar isOpen={isOpen}>
         <Nav className="me-auto" navbar>
           <NavItem>
-            <Link href="/dashboard" className="nav-link">
+            <Link href="/dashboard" className="nav-link" id="nav-dashboard">
               Dashboard
             </Link>
           </NavItem>
           <NavItem>
-            <Link href="/about" className="nav-link">
+            <Link href="/about" className="nav-link" id="nav-about">
               About
             </Link>
           </NavItem>
           <UncontrolledDropdown inNavbar nav>
-            <DropdownToggle caret nav>
+            <DropdownToggle caret nav id="nav-menu">
               Other menu
             </DropdownToggle>
             <DropdownMenu end>
@@ -88,7 +94,7 @@ export const Header = () => {
           </UncontrolledDropdown>
         </Nav>
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-          <DropdownToggle color="transparent">
+          <DropdownToggle color="transparent" id="nav-profile">
             <Image
               src={user1}
               alt="profile"
