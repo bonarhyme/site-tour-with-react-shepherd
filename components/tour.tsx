@@ -302,6 +302,15 @@ const Tour: React.FC<PropsWithChildren> = ({ children }) => {
         canClickTarget: true,
         buttons: [
           {
+            classes: "shepherd-button-secondary",
+            text: "Restart",
+            action() {
+              this.cancel();
+              router.push("/dashboard");
+              this.start();
+            },
+          },
+          {
             classes: "shepherd-button-primary",
             text: "Done",
             type: "cancel",
