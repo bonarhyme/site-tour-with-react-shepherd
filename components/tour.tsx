@@ -4,7 +4,9 @@ import {
   ShepherdOptionsWithType,
   ShepherdTour,
   ShepherdTourContext,
+  useShepherdTour,
 } from "react-shepherd";
+import { Button } from "reactstrap";
 import "shepherd.js/dist/css/shepherd.css";
 
 const tourOptions = {
@@ -334,11 +336,31 @@ const Tour: React.FC<PropsWithChildren> = ({ children }) => {
       },
     ];
   }, []);
+
+  const tour = useShepherdTour({ tourOptions, steps: newSteps });
+
   return (
-    <ShepherdTour steps={newSteps} tourOptions={tourOptions}>
-      <TourInstance>{children}</TourInstance>
-    </ShepherdTour>
+    <>
+      <Button
+        onClick={tour.start}
+        style={{
+          position: "fixed",
+          bottom: "50vh",
+          left: "24px",
+          minWidth: 200,
+        }}
+      >
+        Start tour with hook
+      </Button>
+      {children}
+    </>
   );
+
+  // return (
+  //   <ShepherdTour steps={newSteps} tourOptions={tourOptions}>
+  //     <TourInstance>{children}</TourInstance>
+  //   </ShepherdTour>
+  // );
 };
 
 export default Tour;
