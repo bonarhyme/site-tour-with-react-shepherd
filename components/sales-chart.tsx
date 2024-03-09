@@ -69,7 +69,7 @@ export const SalesChart = () => {
   ];
 
   return (
-    <Card id="sales-report">
+    <Card id="sales-chart">
       <CardBody>
         <CardTitle tag="h5">Sales Summary</CardTitle>
         <CardSubtitle className="text-muted" tag="h6">

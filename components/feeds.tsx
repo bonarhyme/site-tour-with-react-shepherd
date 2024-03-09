@@ -50,7 +50,7 @@ export const FeedData = [
 
 export const Feeds = () => {
   return (
-    <Card id="feeds">
+    <Card id="feed">
       <CardBody>
         <CardTitle tag="h5">Feeds</CardTitle>
         <CardSubtitle className="mb-2 text-muted" tag="h6">

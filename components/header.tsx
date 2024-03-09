@@ -27,12 +27,18 @@ export const Header = () => {
     setIsOpen(!isOpen);
   };
   const showMobilemenu = () => {
-    if (typeof window !== "undefined") {
-      document?.getElementById("sidebarArea")?.classList.toggle("showSidebar");
-    }
+    // if (typeof window !== "undefined") {
+    //   document?.getElementById("sidebarArea")?.classList.toggle("showSidebar");
+    // }
   };
   return (
-    <Navbar color="primary" dark expand="md" className="bg-gradient">
+    <Navbar
+      color="primary"
+      dark
+      expand="md"
+      className="bg-gradient"
+      id="navigation"
+    >
       <div className="d-flex align-items-center">
         <NavbarBrand
           href="/"
@@ -66,20 +72,20 @@ export const Header = () => {
       <Collapse navbar isOpen={isOpen}>
         <Nav className="me-auto" navbar>
           <NavItem>
-            <Link href="/dashboard" className="nav-link" id="header-dashboard">
+            <Link href="/dashboard" className="nav-link" id="nav-dashboard">
               Dashboard
             </Link>
           </NavItem>
           <NavItem>
-            <Link href="/about" className="nav-link" id="header-about">
+            <Link href="/about" className="nav-link" id="nav-about">
               About
             </Link>
           </NavItem>
           <UncontrolledDropdown inNavbar nav>
-            <DropdownToggle caret nav id="header-other-menu">
+            <DropdownToggle caret nav id="nav-menu">
               Other menu
             </DropdownToggle>
-            <DropdownMenu end id="header-other-menu-options">
+            <DropdownMenu end>
               <DropdownItem>Option 1</DropdownItem>
               <DropdownItem>Option 2</DropdownItem>
               <DropdownItem divider />
@@ -88,7 +94,7 @@ export const Header = () => {
           </UncontrolledDropdown>
         </Nav>
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-          <DropdownToggle color="transparent" id="header-profile">
+          <DropdownToggle color="transparent" id="nav-profile">
             <Image
               src={user1}
               alt="profile"
@@ -96,7 +102,7 @@ export const Header = () => {
               width="30"
             />
           </DropdownToggle>
-          <DropdownMenu id="header-profile-options">
+          <DropdownMenu>
             <DropdownItem header>Info</DropdownItem>
             <DropdownItem>My Account</DropdownItem>
             <DropdownItem>Edit Profile</DropdownItem>
