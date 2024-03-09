@@ -337,6 +337,7 @@ const Tour: React.FC<PropsWithChildren> = ({ children }) => {
     ];
   }, []);
 
+  // Comment this out if you want to use the context
   const tour = useShepherdTour({ tourOptions, steps: newSteps });
 
   return (
@@ -355,7 +356,9 @@ const Tour: React.FC<PropsWithChildren> = ({ children }) => {
       {children}
     </>
   );
+  // Up
 
+  // Uncomment this if you want to use the context
   // return (
   //   <ShepherdTour steps={newSteps} tourOptions={tourOptions}>
   //     <TourInstance>{children}</TourInstance>
